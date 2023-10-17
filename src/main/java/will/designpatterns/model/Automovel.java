@@ -12,6 +12,8 @@ public class Automovel {
     private String versao;
     private boolean novoDeFabrica;
     private Double valor;
+    @Transient
+    private Long fabricante_id;
 
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "fabricante_id")
@@ -63,5 +65,13 @@ public class Automovel {
 
     public void setFabricante(Fabricante fabricante) {
         this.fabricante = fabricante;
+    }
+
+    public Long getFabricante_id() {
+        return fabricante_id;
+    }
+
+    public void setFabricante_id(Long fabricante_id) {
+        this.fabricante_id = fabricante_id;
     }
 }
